@@ -67,6 +67,5 @@ Commit your changes to the "dev" branch before continuing
 '
 
 # Fetch changes from GitHub
-snow git fetch quickstart_common.public.quickstart_repo
 # Deploy the updated data pipeline
 snow git execute @quickstart_common.public.quickstart_repo/branches/dev/steps/0[134]_*

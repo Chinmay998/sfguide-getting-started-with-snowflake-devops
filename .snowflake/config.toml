@@ -1,8 +1,8 @@
-[connections.default]
+[connections.TOWBBEK-PJ40320]
 warehouse = "QUICKSTART_WH"
 role = "ACCOUNTADMIN"
 database = "QUICKSTART_COMMON"
 schema = "PUBLIC"
-account = "https://zm23870.ap-southeast-1.snowflakecomputing.com"
+account = "TOWBBEK-PJ40320"
 user = "Chinmay74"
 password = "Chinmay@123"

@@ -70,7 +70,7 @@ create or alter task email_notification
       if (:options = '[]') then
         CALL SYSTEM$SEND_EMAIL(
             'email_integration',
-            '<insert your email here>', -- INSERT YOUR EMAIL HERE
+            'kulkarnichinmay74@gmail.com', -- INSERT YOUR EMAIL HERE
             'New data successfully processed: No suitable vacation spots found.',
             'The query did not return any results. Consider adjusting your filters.');
       end if;
@@ -83,14 +83,14 @@ create or alter task email_notification
 
       CALL SYSTEM$SEND_EMAIL(
         'email_integration',
-        '<insert your email here>', -- INSERT YOUR EMAIL HERE
+        'kulkarnichinmay74@gmail.com', -- INSERT YOUR EMAIL HERE
         'New data successfully processed: The perfect place for your summer vacation has been found.',
         :response);
     exception
         when EXPRESSION_ERROR then
             CALL SYSTEM$SEND_EMAIL(
             'email_integration',
-            '<insert your email here>', -- INSERT YOUR EMAIL HERE
+            'kulkarnichinmay74@gmail.com', -- INSERT YOUR EMAIL HERE
             'New data successfully processed: Cortex LLM function inaccessible.',
             'It appears that the Cortex LLM functions are not available in your region');
     end;
@@ -105,7 +105,7 @@ alter task email_notification resume;
 execute task vacation_spots_update;
 
 
-/*
+
 -- SQL commands to monitor the progress of tasks
 
 -- Get a list of tasks
@@ -118,7 +118,7 @@ FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY(
     RESULT_LIMIT => 100))
 ORDER BY SCHEDULED_TIME DESC;
 
--- Scheduled task runs
+ 
 SELECT
     TIMESTAMPDIFF(SECOND, CURRENT_TIMESTAMP, SCHEDULED_TIME) NEXT_RUN,
     SCHEDULED_TIME,
@@ -127,4 +127,3 @@ SELECT
 FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY())
 WHERE STATE = 'SCHEDULED'
 ORDER BY COMPLETED_TIME DESC;
-*/

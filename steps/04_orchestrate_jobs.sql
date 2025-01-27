@@ -1,4 +1,6 @@
 use role accountadmin;
+
+
 use schema quickstart_{{environment}}.gold;
 
 
@@ -17,7 +19,7 @@ create or alter table vacation_spots (
 , korean_restaurant_cnt int
 
 
-) data_retention_time_in_days = {{retention_time}};;
+) data_retention_time_in_days = {{retention_time}};
 
 
 -- task to merge pipeline results into target table

@@ -48,4 +48,3 @@ CREATE OR ALTER STAGE bronze.raw;
 copy files into @bronze.raw from @quickstart_common.public.quickstart_repo/branches/main/data/airport_list.json;
 
 
-execute immediate from @quickstart_common.public.quickstart_repo/branches/dev/steps/0[134]_*;

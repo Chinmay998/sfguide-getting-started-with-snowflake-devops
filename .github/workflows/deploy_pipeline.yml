@@ -29,6 +29,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Verify the presence of requirements.txt
+      - name: Check for requirements.txt
+        run: |
+          if [ ! -f "requirements.txt" ]; then
+            echo "requirements.txt not found"
+            exit 1
+          fi
+
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
